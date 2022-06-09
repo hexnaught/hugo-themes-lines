@@ -1,12 +1,14 @@
 <hr>
 <footer>
-	  <nav>
-      
-  <ul>
-    <li>
-      © {{ dateFormat "2006" now }}
-    </li>
-  
-  </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li>
+        {{ .Site.Author.name }} © {{ dateFormat "2006" now }}
+      </li>
+      <li>
+        Theme: <a target="_blank" href="https://github.com/ronv/lines">ronv/lines</a>
+      </li>
+
+    </ul>
+  </nav>
 </footer>
