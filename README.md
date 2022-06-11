@@ -20,7 +20,3 @@ Lines is a minimalistic Hugo blogging theme.
 - Sass
 - Seo optimized (Twitter cards, Facebook Open Graph, Schema.org)
 - Ultra fast (Only ~2kb of CSS)
-
-### Screenshot
-
-![Screenshot](screenshot.png)
