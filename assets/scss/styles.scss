@@ -46,6 +46,9 @@ a, body {
 .meta a, .meta a:visited {
     color: rgb(96, 96, 96);
 }
+.meta .author {
+    padding-left: 2rem;
+}
 
 .tags::before {
 	content: "\2022";
@@ -100,6 +103,7 @@ header li, footer li {
 
 header a, footer a {
     text-decoration: none;
+    padding: 0.2rem;
 }
 
 header ul, footer ul {
@@ -110,7 +114,9 @@ header ul, footer ul {
 
 [aria-current="page"] {
 	//font-weight: bold;
-	text-decoration: line-through;
+	// text-decoration: line-through;
+    background-color: #353535;
+	color: #fff;
 }
 
 header, section, footer {
