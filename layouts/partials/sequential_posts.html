@@ -1,0 +1,12 @@
+<div>
+  {{ with .PrevInSection }}
+    <a style="float: left" href="{{ .Permalink }}">
+      <span>&#171; {{ .Title | truncate 32 }}</span>
+    </a>
+  {{ end }}
+  {{ with .NextInSection }}
+    <a style="float: right" href="{{ .Permalink }}">
+      <span>{{ .Title | truncate 32 }} &#187;</span>
+    </a>
+  {{ end }}
+</div>

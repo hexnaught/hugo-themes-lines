@@ -1,0 +1,45 @@
+<pre>
+  {{ .Kind }}
+  {{ .Next }}
+  {{ .NextInSection }}
+  {{ .Prev }}
+  {{ .PrevInSection }}
+
+  Description: {{ .Description }}
+  Data: {{ .Data }}
+  Aliases: {{ .Aliases }}
+
+  .Site.RegularPages.Next: {{ with .Site.RegularPages.Next . }} {{ .Title }} {{ end }}
+  .Site.RegularPages.Prev: {{ with .Site.RegularPages.Prev . }} {{ .Title }} {{ end }}
+
+  Site.Sections: {{ .Site.Sections }}
+
+  CurrentSection: {{ .CurrentSection }}
+  FirstSection: {{ .FirstSection }}
+  Section: {{ .Section }}
+  Parent: {{ .Parent }}
+
+  Next: {{ .Next }}
+  NextInSection: {{ .NextInSection }}
+  Prev: {{ .Prev }}
+  PrevInSection: {{ .PrevInSection }}
+
+  Current: {{ . }}
+  Kind: {{ .Kind }}
+
+  {{ .Params }}
+
+  {{ .Site}}
+</pre>
+
+<pre>
+  <!-- {{ range $i, $e := .Params.tags -}}
+    {{- if $i -}}, {{ end -}}
+    <a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>{{ $e }}</a>
+  {{- end -}} -->
+
+
+  {{ range .Sections }}
+    {{ .FirstSection }}
+  {{ end }}
+</pre>
