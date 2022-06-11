@@ -7,8 +7,10 @@
     <!-- Optional channel elements -->
     <language>en</language>
     <copyright>Copyright {{ now.Format "2006"}}, {{ .Site.Author.name }}</copyright>
-    <managingEditor>{{ .Site.Author.email }}</managingEditor>
-    <webMaster>{{ .Site.Author.email }}</webMaster>
+    {{ with .Site.Author.email }}
+    <managingEditor>{{.}}</managingEditor>
+    <webMaster>{{.}}</webMaster>
+    {{end}}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     <generator>Hugo - gohugo.io</generator>
     <docs>http://cyber.harvard.edu/rss/rss.html</docs>
@@ -18,7 +20,7 @@
             <title>{{ .Title }}</title>
             <link>{{ .Permalink }}</link>
             <description>{{ .Content | html }}</description>
-            <author>{{ .Site.Author.name }} ({{ .Site.Author.email }})</author>
+            <author>{{ .Site.Author.name }} {{ with .Site.Author.email }}({{.}}){{ end }}</author>
             <guid>{{ .Permalink }}</guid>
             <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
             <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
