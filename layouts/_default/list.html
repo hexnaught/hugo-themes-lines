@@ -6,6 +6,12 @@
     {{ partial "header.html" . }}
     <section>
 
+      {{ $pages :=  where .Site.RegularPages "Section" "posts" }}
+
+      {{ if not $pages }}
+      <span style="font-style: italic;">Nothing to see here yet! Check <a href="/news">News</a> and <a href="/about">About</a> in the meantime!</span>
+      {{ end }}
+
       <ul class="posts">
         {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate.Reverse).Pages }}
           {{ if ne .Kind "section" }}
