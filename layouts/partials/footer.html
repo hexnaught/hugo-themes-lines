@@ -6,8 +6,20 @@
 
   <nav>
     <ul>
-      <li>
-        {{ .Site.Author.name }} © {{ dateFormat "2006" now }}
+      <li class="author-socials">
+        {{ with .Site.Author.website }}
+        <a target="_blank" href="{{ . }}"><i class="lni lni-website"></i> {{ . }}</a>
+        {{ end }}
+        {{ with .Site.Author.twitter }}
+        <a target="_blank" href="https://twitter.com/{{ . }}"><i class="lni lni-twitter-original"></i></a>
+        {{ end }}
+        {{ with .Site.Author.github }}
+        <a target="_blank" href="https://github.com/{{ . }}"><i class="lni lni-github-original"></i></a>
+        {{ end }}
+        {{ with .Site.Author.linkedin }}
+        <a target="_blank" href="https://linkedin.com/in/{{ . }}"><i class="lni lni-linkedin-original"></i></a>
+        {{ end }}
+        <span style="margin-left: 0.1em;">{{ .Site.Author.name }} © 2022 - {{ dateFormat "2006" now }}</span>
       </li>
       <li>
         Base Theme:<br /><a target="_blank" href="https://github.com/ronv/lines">ronv/lines</a>
