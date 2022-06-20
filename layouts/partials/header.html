@@ -1,16 +1,19 @@
 <header>
   <nav>
     {{ $current := . }}
-    <ul>{{ range .Site.Menus.main }}
-      {{ if eq .Identifier "rss" }}
-      <li>
-        <a target="_blank" href="{{ .URL }}" {{ if (eq .Name $current.Title) }}aria-current="page" {{ end }}>{{ .Name }}</a>
-      </li>
-      {{ else }}
-      <li>
-        <a href="{{ .URL }}" {{ if (eq .Name $current.Title) }}aria-current="page" {{ end }}>{{ .Name }}</a>
-      </li>
-      {{ end }}
+    <ul>
+      {{ range .Site.Menus.main }}
+        {{ if eq .Identifier "rss" }}
+        <li><a target="_blank" href="{{ .URL }}" {{ if (eq .Name $current.Title) }}aria-current="page" {{ end }}>{{ .Name }}</a></li>
+        {{ else if eq .Identifier "posts" }}
+        <li><a href="{{ .URL }}" {{ if (or (eq $current.Kind "home") (eq $current.Type .Identifier)) }}aria-current="page" {{ end }}>{{ .Name }}</a></li>
+        {{ else if (eq $current.Type .Identifier) }}
+        <li><a href="{{ .URL }}" {{ if (eq $current.Type .Identifier) }}aria-current="page" {{ end }}>{{ .Name }}</a></li>
+        {{ else if (eq .Identifier "tags") }}
+        <li><a href="{{ .URL }}" {{ if (eq $current.Type .Identifier) }}aria-current="page" {{ end }}>{{ .Name }}</a></li>
+        {{ else }}
+        <li><a href="{{ .URL }}" {{ if (and (eq $current.Kind "page") (eq .Name $current.Title)) }}aria-current="page" {{ end }}>{{ .Name }}</a></li>
+        {{ end }}
       {{ end }}
     </ul>
   </nav>
