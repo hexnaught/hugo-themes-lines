@@ -2,14 +2,14 @@
   "version": "https://jsonfeed.org/version/1",
   "title": "{{ .Site.Title }}",
   "home_page_url": "{{ .Site.BaseURL }}",
-  "feed_url": "https://ronaldsvilcins.com/feed.json",
+  "feed_url": "{{ .Site.BaseURL }}feed.json",
   "description": "{{ .Site.Params.description }}",
   "icon": "{{ .Site.BaseURL }}icons/ttb_icon_512.png",
   "favicon": "{{ .Site.BaseURL }}icons/ttb_icon_512.png",
   "expired": false,
   "author": {
-    "name": "Ronalds Vilcins",
-    "url": "https://ronaldsvilcins.com/"
+    "name": "Daniel Parkes",
+    "url": "https://danjparkes.dev/"
   },
   "items": [
     {{ $list := (where .Site.RegularPages "Section" "posts") }}
@@ -23,13 +23,11 @@
       "content_text": {{ .Content | plainify | jsonify }},
       "content_html": {{ .Content | jsonify }},
       "url": {{ .Permalink | jsonify }},
-      "image": "{{ .Site.BaseURL }}photos/{{ .Params.photo }}",
-      "banner_image": "{{ .Site.BaseURL }}photos/{{ .Params.photo }}",
       "date_published": "{{ .Date.Format `2016-02-09T14:22:00-07:00` | safeHTML }}",
       "date_modified": "{{ .Date.Format `2016-02-09T14:22:00-07:00` | safeHTML }}",
       "author": {
-        "name": "Ronalds Vilcins",
-        "url": "https://ronaldsvilcins.com/"
+        "name": "Daniel Parkes",
+        "url": "https://danjparkes.dev/"
       }
     }{{ if ne (add $index 1) $len }},{{ end }}
     {{ end }}
