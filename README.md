@@ -1,22 +1,7 @@
 # Lines
 
-Lines is a minimalistic Hugo blogging theme.
+Lines is a minimalistic Hugo blogging theme. This is a fairly modified fork of the original theme (see below) to make it more in line with what I wanted at [tinytech.blog](https://tinytech.blog).
 
-### Demo: [https://lines-hugo-theme.netlify.app/](https://lines-hugo-theme.netlify.app/)
+## Based on ronv/lines
 
-### Features
-
-- Minimalistic, clean and simple design
-- Responsive design
-- Inline CSS
-- Anchor headings
-- Tags
-- Security headers (for Netlify hosting)
-- 404 page
-- Compressed CSS and HTML
-- 100/100 score on Lighthouse, Page Speed Insights & Webpagetest
-- Robots.txt
-- Atom & Json feeds
-- Sass
-- Seo optimized (Twitter cards, Facebook Open Graph, Schema.org)
-- Ultra fast (Only ~2kb of CSS)
+The original theme can be [found here (github/ronv/lines)](https://github.com/ronv/lines).
