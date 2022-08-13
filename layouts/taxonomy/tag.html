@@ -15,8 +15,9 @@
           <hr />
           <time datetime="{{ dateFormat " 2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
         </li></a>
-        <p style="margin-top: 0; color: #353535; opacity: .5">
-          {{ .Summary | truncate 256 }}
+        <p class="tag-summary">
+          <!-- {{ .Summary | truncate 256 }} -->
+          {{ .Description | truncate 256 }}
         </p>
         {{ end }}
       </ul>
