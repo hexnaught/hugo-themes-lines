@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
-  {{ partial "head.html" . }}
+{{ partial "head.html" . }}
+
 <body>
   <main>
     {{ partial "header.html" . }}
     <section>
 
-      {{ $pages :=  where .Site.RegularPages "Section" "posts" }}
+      {{ $pages := where .Site.RegularPages "Section" "posts" }}
 
       {{ if not $pages }}
       <span style="font-style: italic;">Nothing to see here yet! Check <a href="/news">News</a> and <a href="/about">About</a> in the meantime!</span>
@@ -14,16 +15,16 @@
 
       <ul class="posts">
         {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate.Reverse).Pages }}
-          {{ if ne .Kind "section" }}
-          <a href="{{ .Permalink }}" title="{{ .Title }}" itemprop="name url">
-            <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-             <span>{{ .Title }}</span>
-              <hr>
-              <span class="content-len">{{ .ReadingTime }} minute read</span>
-              <time datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
-            </li>
-          </a>
-          {{ end }}
+        {{ if ne .Kind "section" }}
+        <a href="{{ .Permalink }}" title="{{ .Title }}" itemprop="name url">
+          <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <span class="mobile-small">{{ .Title }}</span>
+            <hr class="mobile-hidden" />
+            <span class="content-len mobile-hidden">{{ .ReadingTime }} minute read</span>
+            <time class="mobile-small" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
+          </li>
+        </a>
+        {{ end }}
         {{ end }}
       </ul>
     </section>
@@ -31,4 +32,5 @@
     {{ partial "footer.html" . }}
   </main>
 </body>
+
 </html>

@@ -267,3 +267,27 @@ h2 {
     opacity: .5;
     padding: 0em .2em;
 }
+
+@media (max-width: 767px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    @media (max-width: 400px) {
+        .mobile-small {
+            font-size: .9em;
+        }
+    }
+    @media (max-width: 370px) {
+        .mobile-small {
+            font-size: .8em;
+        }
+    }
+
+}
+
+@media (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+}

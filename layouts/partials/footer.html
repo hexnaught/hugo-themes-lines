@@ -7,6 +7,8 @@
   <nav>
     <ul>
       <li class="author-socials">
+        <span>{{ .Site.Author.name }} © <br class="mobile-only" />2022 - {{ dateFormat "2006" now }}</span>
+        <br class="mobile-only" />
         {{ with .Site.Author.website }}
         <a target="_blank" href="{{ . }}"><i class="lni lni-website"></i> {{ . }}</a>
         {{ end }}
@@ -19,7 +21,6 @@
         {{ with .Site.Author.linkedin }}
         <a target="_blank" href="https://linkedin.com/in/{{ . }}"><i class="lni lni-linkedin-original"></i></a>
         {{ end }}
-        <span style="margin-left: 0.1em;">{{ .Site.Author.name }} © 2022 - {{ dateFormat "2006" now }}</span>
       </li>
       <li style="text-align: right;">
         Theme:<a target="_blank" href="https://github.com/hexnaught/hugo-themes-lines"><i class="lni lni-github-original"> </i>lines</a>
