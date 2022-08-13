@@ -7,26 +7,28 @@
   <span>Words: {{ countwords .Content }} | Characters: {{ countrunes .Content }} | Reading Time: {{ .ReadingTime }} minutes</span>
   <br />
 
-  <span>Author(s):</span>
-  </br>
-  {{ range .Param "authors" }}
-  <span class="author">
-    {{ with .name }}
-    <span>{{ . }}</span> &bull;
+  {{ if isset .Params "authors" }}
+    <span>Author(s):</span>
+    </br>
+    {{ range .Param "authors" }}
+    <span class="author">
+      {{ with .name }}
+      <span>{{ . }}</span> &bull;
+      {{ end }}
+      {{ with .website }}
+      <a target="_blank" href="{{ . }}"><i class="lni lni-website"></i> {{ . }}</a> &bull;
+      {{ end }}
+      {{ with .twitter }}
+      <a target="_blank" href="https://twitter.com/{{ . }}"><i class="lni lni-twitter-original"></i> @{{ . }}</a> &bull;
+      {{ end }}
+      {{ with .github }}
+      <a target="_blank" href="https://github.com/{{ . }}"><i class="lni lni-github-original"></i> {{ . }}</a>
+      {{ end }}
+      {{ with .linkedin }}
+      <a target="_blank" href="https://linkedin.com/in/{{ . }}"><i class="lni lni-linkedin-original"></i> {{ . }}</a>
+      {{ end }}
+    </span>
+    </br>
     {{ end }}
-    {{ with .website }}
-    <a target="_blank" href="{{ . }}"><i class="lni lni-website"></i> {{ . }}</a> &bull;
-    {{ end }}
-    {{ with .twitter }}
-    <a target="_blank" href="https://twitter.com/{{ . }}"><i class="lni lni-twitter-original"></i> @{{ . }}</a> &bull;
-    {{ end }}
-    {{ with .github }}
-    <a target="_blank" href="https://github.com/{{ . }}"><i class="lni lni-github-original"></i> {{ . }}</a>
-    {{ end }}
-    {{ with .linkedin }}
-    <a target="_blank" href="https://linkedin.com/in/{{ . }}"><i class="lni lni-linkedin-original"></i> {{ . }}</a>
-    {{ end }}
-  </span>
-  </br>
   {{ end }}
 </p>
