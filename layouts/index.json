@@ -4,8 +4,8 @@
   "home_page_url": "{{ .Site.BaseURL }}",
   "feed_url": "https://ronaldsvilcins.com/feed.json",
   "description": "{{ .Site.Params.description }}",
-  "icon": "https://ronaldsvilcins.com/assets/apple-touch-icon.png",
-  "favicon": "https://ronaldsvilcins.com/assets/favicon.ico",
+  "icon": "{{ .Site.BaseURL }}icons/ttb_icon_512.png",
+  "favicon": "{{ .Site.BaseURL }}icons/ttb_icon_512.png",
   "expired": false,
   "author": {
     "name": "Ronalds Vilcins",
