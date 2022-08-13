@@ -4,6 +4,9 @@
       <span>&#171; {{ .Title | truncate 32 }}</span>
     </a>
   {{ end }}
+
+  <div class="flex-space-fill"></div>
+
   {{ with .NextInSection }}
     <a class="next-post" href="{{ .Permalink }}">
       <span>{{ .Title | truncate 32 }} &#187;</span>
